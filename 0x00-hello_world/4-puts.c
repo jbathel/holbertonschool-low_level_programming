@@ -2,6 +2,7 @@
 
 /**
  * main - entry point
+ *
  * Description: prints characters in an array
  * Return: Always 0 (Success)
  */
