@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 /**
@@ -23,7 +24,7 @@ n = rand() - RAND_MAX / 2;
 	}
 	if (n < 0)
 	{
-	printf("%d is negativen\n", n);
+	printf("%d is negative\n", n);
 	}
 return (0);
 }
