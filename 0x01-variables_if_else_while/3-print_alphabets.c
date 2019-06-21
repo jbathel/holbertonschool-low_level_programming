@@ -11,11 +11,11 @@ int main(void)
 char c;
 char ch;
 
-for (c = 'a' ; c < 'z' ; c++)
+for (c = 65 ; c < 91 ; c++)
 {
 putchar (c);
 }
-for (ch = 'A' ; ch < 'Z' ; ch++)
+for (ch = 97 ; ch < 123 ; ch++)
 {
 putchar (ch);
 }
