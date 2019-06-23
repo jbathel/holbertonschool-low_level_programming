@@ -15,8 +15,8 @@ int digit;
 	for (digit = 48; digit <= 57; digit++)
 	{
 	putchar(digit);
-	putchar(',');
-	putchar(' ');
+	putchar(44);
+	putchar(32);
 	}
 	putchar('\n');
 return (0);
