@@ -10,11 +10,16 @@
  */
 int main(void)
 {
-int a = 0;
+int a;
+int b;
 
-	for (a = 97; a <= 102; a++)
+	for (a = 49; a <= 57; a++)
 	{
 	putchar(a);
+	}
+	for (b = 97; b <= 102; b++)
+	{
+	putchar(b);
 	}
 	putchar('\n');
 return (0);
