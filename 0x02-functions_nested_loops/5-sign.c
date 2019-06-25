@@ -1,20 +1,27 @@
 #include "holberton.h"
 /**
  * print_sign - calls function
- *
+ * @n: number to be checked
  * Description: Prints the sign of
  * a number.
- * Return: Always 0 (Success)
+ * Return: 0, 1, -1
  */
-int print_sign (int n)
+int print_sign(int n)
 {
-	if(n >= '1' && n <= '9')
-	_putchar('+');
-	return (1);
-	else if(n >= '-9' && n <= '-1')
-	_putcar('-');
-	return ('-1');
+	if (n > 0)
+	{
+		_putchar('+');
+		return (1);
+	}
+
+	else if (n < 0)
+	{
+		_putchar('-');
+		return (-1);
+	}
 	else
-	_putchar('0');
-	return (0);
+	{
+		_putchar('0');
+		return (0);
+	}
 }
