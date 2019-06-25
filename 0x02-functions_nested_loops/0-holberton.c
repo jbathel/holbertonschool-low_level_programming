@@ -2,8 +2,8 @@
 /**
  * main - entry point
  *
- * Description: This function will
- * print "Holberton" when called.
+ * Description: This program will
+ * print "Holberton".
  * Return: Always 0 (Success)
  */
 int main(void)
