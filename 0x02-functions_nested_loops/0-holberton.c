@@ -2,8 +2,8 @@
 /**
  * main - entry point
  *
- * Description: This program will
- * print "Holberton".
+ * Description: This function will
+ * print "Holberton" when called.
  * Return: Always 0 (Success)
  */
 int main(void)
@@ -16,3 +16,4 @@ int b;
 	_putchar ('\n');
 return (0);
 }
+
