@@ -21,7 +21,7 @@ int d;
 		{
 		for (d = 48; d <= 57; d++)
 			{
-			if (!(a + b == c + d || c + d <= a + b))
+			if (!(((a == c) && (b == c )) || d <= c))
 			{
 			putchar(a);
 			putchar(b);
