@@ -2,8 +2,8 @@
 /**
  * main - entry point
  *
- * Description: This program will assign a random number
- * to the variable n each time it is executed.
+ * Description: This function will
+ * print "Holberton" when called.
  * Return: Always 0 (Success)
  */
 int main(void)
