@@ -20,8 +20,8 @@ void puts_half(char *str)
 	if (count % 2 == 0)
 		count = count / 2;
 	else
-		count = (count - 1) / 2;
-		str = str - (count + 1);
+		count = ((count - 1) / 2);
+		str = str - count;
 	for (; *str != '\0'; str++)
 		_putchar (*str);
 	_putchar ('\n');
