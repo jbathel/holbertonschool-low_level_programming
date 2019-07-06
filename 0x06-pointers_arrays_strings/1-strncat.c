@@ -1,7 +1,6 @@
 #include "holberton.h"
 /**
- *
- *_strncat - calls function
+ * _strncat - calls function
  * @dest: string out
  * @src: pointer to array
  * @n: integer
