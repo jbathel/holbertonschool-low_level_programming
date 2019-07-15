@@ -6,7 +6,7 @@
  * main - entry point
  * @argc: argument count
  * @argv: arguments passed through command line
- * Description: Prints characte program that prints its name,
+ * Description: Program that prints its name,
  * followed by a new line.
  * Return: Always 0 (Success)
  */
