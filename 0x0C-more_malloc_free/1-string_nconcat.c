@@ -21,20 +21,19 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 
 	c1 = _strlen(s1);
-	c2 = _strlen(s2);
-	if (n < c2)
-		c2 = n;
+	c2 = n;
+
 	l = c1 + c2;
 
-	tmp = malloc(l);
+	tmp = malloc(sizeof(char) * (l + 1));
 	if (tmp == NULL)
 	return (NULL);
 	for (i = 0; s1[i]; i++)
 		tmp[i] = s1[i];
 	for (j = 0; j < n; j++)
 		tmp[i + j] = s2[j];
-		tmp[i + j] = '\0';
-		return (tmp);
+	tmp[i + j] = '\0';
+	return (tmp);
 }
 /**
  * _strlen - returns the length of a string.
