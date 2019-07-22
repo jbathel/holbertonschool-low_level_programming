@@ -19,6 +19,10 @@ int main(void)
 		{
 			printf("Fizz ");
 		}
+		else if (a == 100)
+		{
+			printf("Buzz");
+		}
 		else if (a % 5 == 0)
 		{
 			printf("Buzz ");
@@ -26,6 +30,6 @@ int main(void)
 		else
 			printf("%d ", a);
 	}
-	putchar ('\n');
+	printf("\n");
 	return (0);
 }
