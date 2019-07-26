@@ -2,7 +2,8 @@
 
 /**
   * add - calls function
-  * @int: integers to be added
+  * @a: integer to be added
+  * @b: integer to be added
   * Description: Adds two integers
   * Return: int
   */
