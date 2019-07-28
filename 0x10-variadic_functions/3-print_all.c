@@ -1,8 +1,4 @@
 #include "variadic_functions.h"
-#include <stdio.h>
-#include <stdarg.h>
-#include <stdlib.h>
-
 /**
  * op_char - calls function
  * @printAll: parser
@@ -47,33 +43,42 @@ void op_char_ptr(va_list printAll)
  */
 void print_all(const char * const format, ...)
 {
-	int i, j;
+	int i;
+	int j;
 
-
-	 ops f_ops[] = {
+	ops f_ops[] = {
 		{"c", op_char},
 		{"i", op_int},
 		{"f", op_float},
 		{"s", op_char_ptr},
-
 	};
 
 	va_list printAll;
 
 	va_start(printAll, format);
 
-	for (i = 0; format[i] != '\0'; i++)
+	i = 0;
+
+	while (format[i] != '\0')
 	{
-		for (j = 0; j < 4; j++)
+		j = 0;
+
+		while (j < 4)
 		{
+			if (format[i] == *f_ops[j].ic && j != 3)
+			{
+				f_ops[j].ch(printAll);
+				printf(", ");
+				break;
+			}
+
 			if (format[i] == *f_ops[j].ic)
 			{
-				if (j != 0)
-				printf(", ");
 				f_ops[j].ch(printAll);
-
 			}
+			j++;
 		}
+		i++;
 	}
 	printf("\n");
 }
