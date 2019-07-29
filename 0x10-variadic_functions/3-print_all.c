@@ -42,7 +42,10 @@ void op_char_ptr(va_list list)
 
 	str = va_arg(list, char *);
 	if (str == NULL)
-		str = "(nil)";
+	{
+		printf("(nil)");
+		return;
+	}
 	printf("%s", str);
 }
 /**
