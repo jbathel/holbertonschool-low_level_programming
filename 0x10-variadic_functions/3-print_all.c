@@ -1,5 +1,7 @@
 #include "variadic_functions.h"
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
 /**
  * op_char - calls function
  * @list: string struct
@@ -91,4 +93,3 @@ void print_all(const char * const format, ...)
 	printf("\n");
 	va_end(list);
 }
-
