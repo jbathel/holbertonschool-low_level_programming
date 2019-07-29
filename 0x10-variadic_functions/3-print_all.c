@@ -1,42 +1,52 @@
 #include "variadic_functions.h"
+
 /**
  * op_char - calls function
- * @printAll: parser
+ * @list: string struct
+ *
  * Return: 0
  */
-void op_char(va_list printAll)
+void op_char(va_list list)
 {
-	printf("%c", va_arg(printAll, int));
+	printf("%c", va_arg(list,  int));
 }
 /**
  * op_int - calls function
- * @printAll: parser
+ * @list: string struct
+ *
  * Return: 0
  */
-void op_int(va_list printAll)
+void op_int(va_list list)
 {
-	printf("%d", va_arg(printAll, int));
+	printf("%d", va_arg(list, int));
 }
 /**
  * op_float - calls function
- * @printAll: parser
+ * @list: string struct
+ *
  * Return: 0
  */
-void op_float(va_list printAll)
+void op_float(va_list list)
 {
-	printf("%f", va_arg(printAll, double));
+	printf("%f", va_arg(list, double));
 }
 /**
  * op_char_ptr - calls function
- * @printAll: parser
+ * @list: string struct
+ *
  * Return: 0
  */
-void op_char_ptr(va_list printAll)
+void op_char_ptr(va_list list)
 {
-	printf("%s", va_arg(printAll, char *));
+	char *str;
+
+	str = va_arg(list, char *);
+	if (str == NULL)
+		str = "(nil)";
+	printf("%s", str);
 }
 /**
- * print_all - calls function
+ * get_op_func - calls function
  * @format: list of types of arguments passed to the function
  * Description: Function that prints anything
  * Return: 0
@@ -44,42 +54,38 @@ void op_char_ptr(va_list printAll)
 void print_all(const char * const format, ...)
 {
 	int i;
-	int j;
+	int j = 0;
+	char *separator = "";
 
-	ops f_ops[] = {
+	va_list list;
+
+	op_t f_ops[] = {
 		{"c", op_char},
 		{"i", op_int},
 		{"f", op_float},
 		{"s", op_char_ptr},
+		{NULL, NULL}
 	};
-
-	va_list printAll;
-
-	va_start(printAll, format);
-
 	i = 0;
+
+	va_start(list, format);
 
 	while (format[i] && format)
 	{
-		j = 0;
-
-		while (j < 4)
+		while (f_ops[j].c)
 		{
-			if (format[i] == *f_ops[j].ic && j != 3)
+			if (*f_ops[j].c == format[i])
 			{
-				f_ops[j].ch(printAll);
-				printf(", ");
-				break;
-			}
-
-			if (format[i] == *f_ops[j].ic)
-			{
-				f_ops[j].ch(printAll);
+				printf("%s", separator);
+				f_ops[j].ch(list);
+				separator = ", ";
 			}
 			j++;
 		}
+		j = 0;
 		i++;
 	}
 	printf("\n");
-	va_end(printAll);
+	va_end(list);
 }
+
