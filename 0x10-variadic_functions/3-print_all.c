@@ -51,7 +51,7 @@ void op_char_ptr(va_list list)
 	printf("%s", str);
 }
 /**
- * get_op_func - calls function
+ * print_all - calls function
  * @format: list of types of arguments passed to the function
  * Description: Function that prints anything
  * Return: 0
