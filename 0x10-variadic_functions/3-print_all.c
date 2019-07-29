@@ -59,9 +59,8 @@ void op_char_ptr(va_list list)
 void print_all(const char * const format, ...)
 {
 	int i;
-	int j = 0;
+	int j;
 	char *separator = "";
-
 	va_list list;
 
 	op_t f_ops[] = {
@@ -71,14 +70,11 @@ void print_all(const char * const format, ...)
 		{"s", op_char_ptr},
 		{NULL, NULL}
 	};
-	i = 0;
-
-	if (format == NULL)
-		return;
 
 	va_start(list, format);
-
-	while (format[i] && format)
+	i = 0;
+	j = 0;
+	while (format && format[i])
 	{
 		while (f_ops[j].c)
 		{
