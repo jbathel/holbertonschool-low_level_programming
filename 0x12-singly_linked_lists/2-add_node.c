@@ -3,6 +3,7 @@
 /**
  * *add_node - Function that adds a new node at the beginning of a list
  * @str: pointer to string
+ * @head: pointer to new new_node
  * Return: the address of the new element, or NULL if failed
  */
 list_t *add_node(list_t **head, const char *str)
