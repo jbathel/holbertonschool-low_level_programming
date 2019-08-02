@@ -14,6 +14,6 @@ mov rax, 60       ; exit(
 		syscall           ; );
 
 section .data
-msg: db "Hello, Holberton\n", 10
+msg: db "Hello, Holberton\n", 14
 msglen: equ $ - msg
 
