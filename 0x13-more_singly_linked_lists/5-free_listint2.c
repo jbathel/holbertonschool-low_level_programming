@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
-  * free_listint - Function that frees a list
+  * free_listint22 - Function that frees a list
   * @head: pointer to pointer to head of list
   * Return: 0
   */
