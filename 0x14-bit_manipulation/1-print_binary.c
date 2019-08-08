@@ -3,7 +3,6 @@
  * print_binary - Function that prints the binary
  * representation of a number
  * @n: unsigned long int
- * Return: the converted number or 0
  */
 void print_binary(unsigned long int n)
 {
@@ -26,5 +25,4 @@ void print_binary(unsigned long int n)
 		else if (flag == 0)
 			_putchar ('0');
 	}
-	return;
 }
