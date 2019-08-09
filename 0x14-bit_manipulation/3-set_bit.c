@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * set_bit
+ * set_bit - Function that sets the value of a bit to 1 at a given index
  * @n: integer
  * @index: index
  * Return: 1 if succesful, -1 if fail
