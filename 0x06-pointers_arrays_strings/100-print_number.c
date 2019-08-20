@@ -2,7 +2,6 @@
 /**
  * print_number - calls function
  * @n: integer passed
- * @m: integer to account for -
  * Description: Function that prints an integer
  * Return: 0
  */
