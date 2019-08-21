@@ -36,7 +36,10 @@ void times_table(void)
 				_putchar (',');
 			}
 			if (col == 0)
+			{
 				_putchar ('0');
+				_putchar (',');
+			}
 		}
 		_putchar ('\n');
 	}
