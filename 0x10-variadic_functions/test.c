@@ -1,93 +1,86 @@
 #include "variadic_functions.h"
-
 /**
- * get_op_func - convert symbol into function
- * @s: string which may correspoind to function
- *
- * Return: function associated with s
+ * op_char - calls function
+ * @printAll: parser
+ * Return: 0
  */
-void op_char(va_list list)
+void op_char(va_list printAll)
 {
-	printf("%c", va_arg(list,  int));
+	printf("%c", va_arg(printAll, int));
 }
 /**
- * get_op_func - convert symbol into function
- * @s: string which may correspoind to function
- *
- * Return: function associated with s
+ * op_int - calls function
+ * @printAll: parser
+ * Return: 0
  */
-void op_int(va_list list)
+void op_int(va_list printAll)
 {
-	printf("%d", va_arg(list, int));
+	printf("%d", va_arg(printAll, int));
 }
 /**
- * get_op_func - convert symbol into function
- * @s: string which may correspoind to function
- *
- * Return: function associated with s
+ * op_float - calls function
+ * @printAll: parser
+ * Return: 0
  */
-void op_float(va_list list)
+void op_float(va_list printAll)
 {
-	printf("%f", va_arg(list, double));
+	printf("%f", va_arg(printAll, double));
 }
 /**
- * get_op_func - convert symbol into function
- * @s: string which may correspoind to function
- *
- * Return: function associated with s
+ * op_char_ptr - calls function
+ * @printAll: parser
+ * Return: 0
  */
-void op_char_ptr(va_list list)
+void op_char_ptr(va_list printAll)
 {
-	char *str;
-
-	str = va_arg(list, char *);
-	if (str == NULL)
-		str = "(nil)";
-	printf("%s", str);
+	printf("%s", va_arg(printAll, char *));
 }
 /**
- * get_op_func - convert symbol into function
- * @s: string which may correspoind to function
- *
- * Return: function associated with s
+ * print_all - calls function
+ * @format: list of types of arguments passed to the function
+ * Description: Function that prints anything
+ * Return: 0
  */
 void print_all(const char * const format, ...)
 {
 	int i;
-	int j = 0;
-	char *separator = "";
+	int j;
 
-	va_list list;
-
-	va_start(list, format);
-
-	op_t f_ops[] = {
-		{"c" , op_char},
-		{"i" , op_int},
-		{"f" , op_float},
-		{"s" , op_char_ptr},
-		{NULL, NULL}
+	ops f_ops[] = {
+		{"c", op_char},
+		{"i", op_int},
+		{"f", op_float},
+		{"s", op_char_ptr},
 	};
+
+	va_list printAll;
+
+	va_start(printAll, format);
+
 	i = 0;
+
 	while (format[i] && format)
 	{
-		/*printf("%d i",i);*/
-		while (f_ops[j].c)
-		{
-			/*printf("%d j",j);*/
+		j = 0;
 
-			if (*f_ops[j].c == format[j])
+		while (j < 4)
+		{
+			if (format[i] == *f_ops[j].ic && j != 3)
 			{
-				printf("%s", separator);
-				f_ops[j].ch(list);
-				separator = ", ";
+				f_ops[j].ch(printAll);
+				printf(", ");
+				break;
+			}
+
+			if (format[i] == *f_ops[j].ic)
+			{
+				f_ops[j].ch(printAll);
 			}
 			j++;
 		}
-		j = 0;
 		i++;
 	}
 	printf("\n");
-	va_end(list);
+	va_end(printAll);
 }
 

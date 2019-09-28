@@ -1,26 +1,36 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
-  * print_times_table - calls function
-  * @n: variable to be tested
-  * Description: Function that outputs times
-  * tables if n is less than 15.
-  */
+ * times_table - calls function
+ * Description: A function that prints the 9 times table
+ * Return: 0
+ */
 void print_times_table(int n)
 {
-	if (n > 15 || n < 0)
-		return;
-	int a, b;
+	int row, col;
 
-	for (a = 0; a <= n; a++)
+	for (row = 0; row < n; row++)
 	{
-		for (b = 0; b <= n; b++)
+		for (col = 0; col < n; col++)
 		{
-			int c = b * a;
 
-			print (c);
+			if ((col * row) < 20)
+			{
+				if (col)
+				{
+					_putchar (' ');
+					_putchar (' ');
+					_putchar ('0' + n);
+				}
+			}
+			if (n < 20)
+			{
+				_putchar (' ');
+				_putchar ('0' + (n / 10));
+				_putchar ('0' + (n % 10));
+			}
 		}
 		_putchar ('\n');
 	}
 }
-

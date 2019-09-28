@@ -12,8 +12,17 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	if (d == NULL)
+	if (dog_t == NULL)
 		return;
-	printf("Name = %s\nAge = %g\nOwner = %s\n", d->na
-			me, d->age, d->owner);
+
+	name
+		malloc
+		free
+	age
+		malloc
+		free
+	owner
+		malloc
+		free
+
 }

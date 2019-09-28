@@ -4,16 +4,23 @@
 
 /**
  * *free_dog - calls function
- * @name: dog name
- * @age: dog age
- * @owner: owner name
- * Description: Function that creates a new dog
+ * @d: pointer to struct
+ * Description: Function that frees dog
  * Return: 0
  */
 void free_dog(dog_t *d)
 {
-	if (d == NULL)
+	if (dog_t == NULL)
 		return;
-	printf("Name = %s\nAge = %g\nOwner = %s\n", d->na
-			me, d->age, d->owner);
+
+	name
+		malloc
+		free
+	age
+		malloc
+		free
+	owner
+		malloc
+		free
+
 }
