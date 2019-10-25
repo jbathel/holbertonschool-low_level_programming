@@ -40,5 +40,6 @@ void print_list(const listint_t *list);
 void print_array(const int *array, size_t size);
 
 /* Prototypes for helper functions */
+void swap(int *a, int *b);
 
 #endif /* SORT_H */
