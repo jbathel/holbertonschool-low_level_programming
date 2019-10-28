@@ -22,5 +22,20 @@ void bubble_sort(int *array, size_t size)
 			}
 		}
 	}
-	return;
+}
+
+/**
+ * swap - Function that swaps two values
+ *
+ * @a: Fisrt value
+ * @b: Second value
+ * Return: 0
+ */
+void swap(int *a, int *b)
+{
+	int tmp;
+
+	tmp = *b;
+	*b = *a;
+	*a = tmp;
 }
