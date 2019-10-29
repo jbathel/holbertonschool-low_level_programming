@@ -56,7 +56,7 @@ size_t partition(int array[], size_t size)
 	size_t j;
 
 	if (!array)
-		return 0;
+		return (0);
 
 	for (j = 0; j < size - 1; j++)
 	{
