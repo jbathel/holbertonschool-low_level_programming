@@ -17,7 +17,7 @@ void quick_sort(int *array, size_t size)
 	print_sort(array, size, 1);
 
 	/*only sort if it could make a difference*/
-	if (size < 2 || !array)
+	if (size < 2)
 		return;
 
 	/* partition and get pivot index */
@@ -54,12 +54,14 @@ void swap(int *a, int *b)
  */
 size_t partition(int array[], size_t size)
 {
-	int pivot = array[size - 1];
+	int pivot;
 	size_t i = -1;
 	size_t j;
 
-	if (!array)
+	if (!array || size < 2)
 		return (0);
+
+	pivot = array[size - 1];
 
 	for (j = 0; j < size - 1; j++)
 	{
