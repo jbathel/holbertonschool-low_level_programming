@@ -11,6 +11,9 @@ void quick_sort(int *array, size_t size)
 {
 	size_t pivot;
 
+	if (!array)
+		return;
+
 	print_sort(array, size, 1);
 
 	/*only sort if it could make a difference*/
