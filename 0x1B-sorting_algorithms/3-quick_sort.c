@@ -45,15 +45,14 @@ void swap(int *a, int *b)
 /**
  * partition - Function that sets the pivot for quick_sort
  *
- * @array: Array that will be sorted
- * @low: First element
- * @high: Last element
+ * @array: Array to partition
+ * @size: Size of array
  * Return: (i + 1)
  */
-size_t partition (int array[], size_t size)
+size_t partition(int array[], size_t size)
 {
 	int pivot = array[size - 1];
-	size_t i = - 1;
+	size_t i = -1;
 	size_t j;
 
 	for (j = 0; j < size - 1; j++)
@@ -80,11 +79,12 @@ size_t partition (int array[], size_t size)
  * print_sort - Function that prints as it should
  * @array: Array to be printed
  * @size: Size of array
+ * @init: Should initialize array
  * Return: 0
  */
 void print_sort(int array[], size_t size, int init)
 {
-	static int *p = NULL;
+	static int *p = (void *)0;
 	static size_t s;
 
 	if (!p && init)
