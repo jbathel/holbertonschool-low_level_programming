@@ -33,10 +33,15 @@ void heapify(int *array, int end, int start, size_t size)
 	int left = start * 2;
 	int right = start * 2 + 1;
 
+	if (!array || size < 2)
+		return;
+
 	if (left < end && array[left] > array[max])
 		max = left;
+
 	if (right < end && array[right] > array[max])
 		max = right;
+
 	if (start != max)
 	{
 		swap(&array[start], &array[max]);
