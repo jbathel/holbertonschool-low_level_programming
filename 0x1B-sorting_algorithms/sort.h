@@ -42,5 +42,6 @@ void print_array(const int *array, size_t size);
 
 /* Prototypes for helper functions */
 void swap(int *a, int *b);
+void heapify(int *array, int end, int start, size_t size);
 
 #endif /* SORT_H */
