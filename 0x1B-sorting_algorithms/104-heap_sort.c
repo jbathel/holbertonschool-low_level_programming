@@ -10,12 +10,16 @@ void heap_sort(int *array, size_t size)
 {
 	int i;
 
+	if (!array || size < 2)
+		return;
+
 	for (i = size / 2; i >= 0; i--)
 		heapify(array, size, i, size);
 	for (i = size - 1; i >= 0; i--)
 	{
 		swap(&array[i], &array[0]);
-		print_array(array, size);
+		if (i != 0)
+			print_array(array, size);
 		heapify(array, i, 0, size);
 	}
 }
@@ -31,8 +35,8 @@ void heap_sort(int *array, size_t size)
 void heapify(int *array, int end, int start, size_t size)
 {
 	int max = start;
-	int left = start * 2 + 1;
-	int right = start * 2 + 2;
+	int left = 2 * start + 1;
+	int right = 2 * start + 2;
 
 	if (!array || size < 2)
 		return;
