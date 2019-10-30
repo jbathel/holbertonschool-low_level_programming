@@ -30,8 +30,8 @@ void heap_sort(int *array, size_t size)
 void heapify(int *array, int end, int start, size_t size)
 {
 	int max = start;
-	int left = start * 2;
-	int right = start * 2 + 1;
+	int left = start * 2 + 1;
+	int right = start * 2 + 2;
 
 	if (!array || size < 2)
 		return;
@@ -45,7 +45,7 @@ void heapify(int *array, int end, int start, size_t size)
 	if (start != max)
 	{
 		swap(&array[start], &array[max]);
-		print_array(array, size);
+			print_array(array, size);
 		heapify(array, end, max, size);
 	}
 }
