@@ -1,7 +1,7 @@
 # This is a makefile for task 3
 
 CC = gcc
-SRC = holberton.o main.o
+SRC = holberton.c main.c
 OBJ = $(SRC:.c=.o)
 NAME = holberton
 RM = rm -f
