@@ -2,6 +2,8 @@
 """
 Function that finds the perimeter of a given island"
 """
+
+
 def island_perimeter(grid):
     """Function that returns the perimeter of the island in grid."""
     island = 0
