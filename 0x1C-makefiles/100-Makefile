@@ -4,11 +4,10 @@ CC = gcc
 SRC = holberton.c main.c
 OBJ = $(SRC:.c=.o)
 NAME = holberton
-RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all : $(OBJ)
-	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+	$(CC) $(SRC) -o $(NAME)
 
 # Deletes all Emacs and Vim temporary files along with the executable
 clean :
