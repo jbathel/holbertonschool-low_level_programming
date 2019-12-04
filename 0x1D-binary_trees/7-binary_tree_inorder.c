@@ -8,12 +8,12 @@
  */
 void _binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
 {
-    if (tree)
-    {
-        _binary_tree_inorder(tree->left, func);
-        func(tree->n);
-        _binary_tree_inorder(tree->right, func);
-    }
+	if (tree)
+	{
+		_binary_tree_inorder(tree->left, func);
+		func(tree->n);
+		_binary_tree_inorder(tree->right, func);
+	}
 }
 /**
  * binary_tree_inorder - Function that uses in-order traversal
@@ -23,6 +23,6 @@ void _binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
  */
 void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
 {
-    if (func)
-        _binary_tree_inorder(tree, func);
+	if (func)
+		_binary_tree_inorder(tree, func);
 }

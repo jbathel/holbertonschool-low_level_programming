@@ -8,12 +8,12 @@
  */
 void _binary_tree_postorder(const binary_tree_t *tree, void (*func)(int))
 {
-    if (tree)
-    {
-        _binary_tree_postorder(tree->left, func);
-        _binary_tree_postorder(tree->right, func);
-        func(tree->n);
-    }
+	if (tree)
+	{
+		_binary_tree_postorder(tree->left, func);
+		_binary_tree_postorder(tree->right, func);
+		func(tree->n);
+	}
 }
 
 /**
@@ -24,6 +24,6 @@ void _binary_tree_postorder(const binary_tree_t *tree, void (*func)(int))
  */
 void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int))
 {
-    if (func)
-        _binary_tree_postorder(tree, func);
+	if (func)
+		_binary_tree_postorder(tree, func);
 }

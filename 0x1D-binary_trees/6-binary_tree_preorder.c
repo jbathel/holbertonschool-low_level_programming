@@ -8,12 +8,12 @@
  */
 void _binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 {
-    if (tree)
-    {
-        func(tree->n);
-        _binary_tree_preorder(tree->left, func);
-        _binary_tree_preorder(tree->right, func);
-    }
+	if (tree)
+	{
+		func(tree->n);
+		_binary_tree_preorder(tree->left, func);
+		_binary_tree_preorder(tree->right, func);
+	}
 }
 
 /**
@@ -21,9 +21,9 @@ void _binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
  * @tree: Pointer to the root node of the tree
  * @func: Pointer tot he function to call
  * Return: 0
-*/
+ */
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 {
-    if (func)
-        _binary_tree_preorder(tree, func);
+	if (func)
+		_binary_tree_preorder(tree, func);
 }
