@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
- * queue_insert_sorted - insert an item into a sorted priority queue
+ * pqueue_insert_sorted - insert an item into a sorted priority queue
  * @front: a double pointer to the front of a queue
  * @node: a pointer to the node to be added to the queue
  *
@@ -33,7 +33,8 @@ pqueue_t *pqueue_insert_sorted(pqueue_t **front, pqueue_t *node)
  *
  * Return: a pointer to the front of the queue
  */
-pqueue_t *binary_tree_to_queue(const bt_t *tree, pqueue_t **front, size_t depth)
+pqueue_t *binary_tree_to_queue(const bt_t *tree,
+		pqueue_t **front, size_t depth)
 {
 	pqueue_t *temp = NULL;
 
@@ -51,7 +52,7 @@ pqueue_t *binary_tree_to_queue(const bt_t *tree, pqueue_t **front, size_t depth)
 				pqueue_insert_sorted(front, temp);
 				return (*front);
 			}
-			while ((temp = *front));
+			while ((temp = *front))
 			{
 				front = &((*front)->next);
 				free(temp);
