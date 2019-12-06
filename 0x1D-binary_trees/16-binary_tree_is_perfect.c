@@ -1,69 +1,56 @@
 #include "binary_trees.h"
 
 /**
- * max - Function that gets the maximum of two values
- * @a: First value
- * @b: Second value
- * Return: Maximum value of a and b
+ * max - get the maximum of two values
+ * @a: a value
+ * @b: a value
+ *
+ * Return: the maximum of a and b
  */
 size_t max(size_t a, size_t b)
 {
 	return (a > b ? a : b);
+
 }
 
 /**
- * _binary_tree_height - Function that returns the height of binary tree
- * @tree: Pointer to root node of binary tree
- * Return: Height, if tree is NULL return 0
+ * _binary_tree_is_perfect - check if a binary tree is perfect
+ * @tree: a pointer to the root node of the tree
+ * @remaining: the number of levels left to recurse
+ *
+ * Return: If tree is NULL or the tree is not perfect, return 0.
+ * Otherwise, return 1.
  */
-size_t _binary_tree_height(const binary_tree_t *tree)
+int _binary_tree_is_perfect(const binary_tree_t *tree, size_t remaining)
 {
+	if (remaining)
+		return (_binary_tree_is_perfect(tree->left, remaining - 1),
+				_binary_tree_is_perfect(tree->right, remaining - 1));
 	if (tree)
-		return (max(_binary_tree_height(tree->left),
-					_binary_tree_height(tree->right)) + 1);
+		return (!(tree->left || tree->right));
 	return (0);
+
 }
 
 /**
- * binary_tree_height - Function that returns the height of binary tree
- * @tree: Pointer to root node of binary tree
- * Return: Height, if tree is NULL return 0
- */
-size_t binary_tree_height(const binary_tree_t *tree)
-{
-	if (tree)
-		return (max(_binary_tree_height(tree->left),
-					_binary_tree_height(tree->right)));
-	return (0);
-}
-
-/**
- * binary_tree_size - Function that measures size a tree
- * @tree: Pointer to root node of binary tree
- * Return: Size, if tree is NULL return 0
- */
-size_t binary_tree_size(const binary_tree_t *tree)
-{
-	if (tree)
-		return (binary_tree_size(tree->left) +
-				binary_tree_size(tree->right) + 1);
-	return (0);
-}
-
-/**
- * binary_tree_is_perfect - Function that checks if a binary tree is perfect
- * @tree: Pointer to root node of binary tree
- * Return: Return 1, if tree is NULL or not perfect return 0
+ * binary_tree_is_perfect - check if a binary tree is perfect
+ * @tree: a pointer to the root node of the tree
+ *
+ * Return: If tree is NULL or the tree is not perfect, return 0.
+ * Otherwise, return 1.
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	size_t height = binary_tree_height(tree);
-	size_t size = binary_tree_size(tree);
+	const binary_tree_t *root = tree;
+	size_t levels = 0;
 
-	do {
-		if ((size & (1 << height)) == 0)
-			return (0);
-	} while (height >>= 1);
+	if (tree)
+	{
+		while ((tree = tree->left))
+			++levels;
+		return (_binary_tree_is_perfect(root, levels));
 
-	return (1);
+	}
+	return (0);
+
 }
