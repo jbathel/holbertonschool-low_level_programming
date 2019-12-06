@@ -9,6 +9,7 @@
 int binary_tree_is_leaf(const binary_tree_t *node)
 {
 	return (node && !node->left && !node->right);
+
 }
 
 /**
@@ -21,11 +22,17 @@ int binary_tree_is_leaf(const binary_tree_t *node)
  */
 int _binary_tree_is_perfect(const binary_tree_t *tree, size_t remaining)
 {
-	if (remaining)
-		return (_binary_tree_is_perfect(tree->left, remaining - 1) &&
-				_binary_tree_is_perfect(tree->right, remaining - 1));
 	if (tree)
+	{
+		if (remaining)
+		{
+			return (_binary_tree_is_perfect(tree->left, remaining - 1) &&
+					_binary_tree_is_perfect(tree->right, remaining - 1));
+
+		}
 		return (binary_tree_is_leaf(tree));
+
+	}
 	return (0);
 
 }
