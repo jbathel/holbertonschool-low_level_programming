@@ -1,15 +1,14 @@
-#include "binary_trees.h"
+nclude "binary_trees.h"
 
 /**
- * max - get the maximum of two values
- * @a: a value
- * @b: a value
+ * binary_tree_is_leaf - checks if a given node is a leaf
+ * @node: a pointer to the node to check
  *
- * Return: the maximum of a and b
+ * return: 1 if node is a leaf, otherwise 0
  */
-size_t max(size_t a, size_t b)
+int binary_tree_is_leaf(const binary_tree_t *node)
 {
-	return (a > b ? a : b);
+	return (node && !node->left && !node->right);
 
 }
 
@@ -24,10 +23,10 @@ size_t max(size_t a, size_t b)
 int _binary_tree_is_perfect(const binary_tree_t *tree, size_t remaining)
 {
 	if (remaining)
-		return (_binary_tree_is_perfect(tree->left, remaining - 1),
+		return (_binary_tree_is_perfect(tree->left, remaining - 1) &&
 				_binary_tree_is_perfect(tree->right, remaining - 1));
 	if (tree)
-		return (!(tree->left || tree->right));
+		return (binary_tree_is_leaf(tree));
 	return (0);
 
 }
