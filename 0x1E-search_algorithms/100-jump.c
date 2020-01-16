@@ -1,7 +1,7 @@
 #include "search_algos.h"
 #include <math.h>
 /**
- * linear_search - Calls function
+ * jump_search - Calls function
  * @array: pointer to the first element of the array
  * @size: is the number of elements in array
  * @value: is the value to search for
@@ -18,6 +18,11 @@ int jump_search(int *array, size_t size, int value)
 	if (!array)
 		return (-1);
 
+	if (array[i] == value)
+	{
+		printf("Value checked array[%lu] = [%d]\n", i, array[i]);
+		return (i);
+	}
 	while (array[i] < value)
 	{
 		printf("Value checked array[%lu] = [%d]\n", i, array[i]);
@@ -33,11 +38,6 @@ int jump_search(int *array, size_t size, int value)
 		i++;
 		if (i == size)
 			return (-1);
-	}
-	if (array[i] == value)
-	{
-		printf("Value checked array[%lu] = [%d]\n", i, array[i]);
-		return (i);
 	}
 	return (-1);
 }
