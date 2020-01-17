@@ -10,7 +10,7 @@
  * Return: If value not present or if array is NULL return -1,
  * else return first index where value is located.
  */
-int binary_search(int *array, size_t size, int value)
+int advanced_binary(int *array, size_t size, int value)
 {
 	size_t l = 0;
 	size_t r = size - 1;
