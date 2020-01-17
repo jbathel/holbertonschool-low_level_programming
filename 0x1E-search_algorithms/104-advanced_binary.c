@@ -18,16 +18,14 @@ int advanced_binary(int *array, size_t size, int value)
 
 	if (!array)
 		return (-1);
-	while (l <= r)
+	if (r >= l)
 	{
 		print_array(array, l, r);
 		m = l + (r - l) / 2;
 		if (array[m] == value)
 			return (m);
-		if (array[m] < value)
-			l = m + 1;
-		else
-			r = m - 1;
+		if (array[m] > value)
+			return (advanced_binary(array, m + 1, value));
 	}
 	return (-1);
 }
