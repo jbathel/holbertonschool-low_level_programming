@@ -33,10 +33,11 @@ int exponential_search(int *array, size_t size, int value)
 }
 
 /**
- * binary_search - Calls function
+ * binary_search_expo - Calls function
  * @array: pointer to the first element of the array
- * @size: is the number of elements in array
  * @value: is the value to search for
+ * @l: start of array
+ * @r: end of array
  * Description: Function that searches for a value in an
  * array of integers using the Linear search algorithm.
  * Return: If value not present or if array is NULL return -1,
